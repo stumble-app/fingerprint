@@ -40,6 +40,10 @@ fingerprints = deque(fingerprints)
 # start flask server
 app = Flask(__name__)
 
+@app.route('/ping')
+def ping():
+    return 'pong'
+
 @app.route('/next')
 def get_next():
     fingerprint = fingerprints.pop()
